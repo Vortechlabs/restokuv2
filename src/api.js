@@ -1,6 +1,8 @@
 import axios from "axios";
 
+const baseUrl = process.env.REACT_APP_BASEURL
+
 export const getRestaurantList = async() => {
-    const restaurant = await axios.get(`${process.env.REACT_APP_BASEURL}/list`)
-    console.log({restaurantList : restaurant})
+    const restaurant = await axios.get(`${baseUrl}/list`)
+    return restaurant.data
 }
